@@ -32,6 +32,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4367DE3293CD44900E870B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B4367DE4293CD45600E870B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4964FDF29393F690058B2B5 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4367DE5293CD46100E870B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B4964FD129393F690058B2B5 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +73,10 @@
 		B4964FDC29393F690058B2B5 /* CreditCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				B4367DE5293CD46100E870B2 /* Model */,
+				B4367DE4293CD45600E870B2 /* View */,
+				B4367DE3293CD44900E870B2 /* ViewModel */,
 				B4964FDD29393F690058B2B5 /* CreditCalculatorApp.swift */,
-				B4964FDF29393F690058B2B5 /* ContentView.swift */,
 				B4964FE129393F6B0058B2B5 /* Assets.xcassets */,
 				B4964FE329393F6B0058B2B5 /* Preview Content */,
 			);
