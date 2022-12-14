@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct SliderView: View {
-    @State private var amount: Float = 0.0
-    @State private var installment: Float = 0.0
+    @State public var loanAmount: Float = 15000.0
+    @State private var installment: Float = 12.0
     @State private var amountOfInstalment: Float = 0.0
     
+    
     func Calculate() {
-        amountOfInstalment = amount / installment
+        amountOfInstalment = (loanAmount * 0.15) / installment
     }
     
     var body: some View {
         VStack {
+            Spacer()
             Slider(
-                value:  $amount,
+                value:  $loanAmount,
                 in: 1000...30000,
                 step: 100.0,
                 minimumValueLabel: Text("1000"),
                 maximumValueLabel: Text("30000"),
                 label: {
-                    Text("Ammount")
+                    Text("Amount")
                 }
             )
             .accentColor(.green)
             Text(
-                    String(format: "loan ammount " + "%.2f", amount)
+                String(format: "loan ammount " + "%.2f", loanAmount)
             )
             
             Slider(
@@ -46,18 +48,16 @@ struct SliderView: View {
             
             Text(
                 String(format:"number of installments " + "%.0f", installment)
-
+                
             )
             
             Button("Calculate" ,action: {
                 Calculate()
             })
+            .frame(height: 50)
+            .frame(maxWidth: 100)
+            .buttonStyle(.borderedProminent)
             Spacer()
-            Text("Amount of installments \(amountOfInstalment)")
-            
-                .frame(height: 50)
-                .frame(maxWidth: 100)
-                .buttonStyle(.borderedProminent)
         }
     }
 }
