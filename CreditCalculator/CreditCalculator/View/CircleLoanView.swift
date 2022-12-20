@@ -34,7 +34,9 @@ struct ProgressBar: View {
             Circle()
                 .stroke(lineWidth: 20.0)
                 .opacity(0.20)
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color.black)
+            
+            Text("Graphic View")
             
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
