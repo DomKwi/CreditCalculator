@@ -10,6 +10,8 @@ import SwiftUI
 struct CircleLoanView: View {
     @State var progressValue: Float = 0.0
     
+    @Binding var loanAmount : Float
+    
 
     var body: some View {
         VStack {
@@ -18,6 +20,8 @@ struct CircleLoanView: View {
                 .padding(20.0).onAppear() {
                     self.progressValue = 0.30
                 }
+            
+            Text("loan amount \(loanAmount)")
         }
     }
 }
@@ -33,6 +37,7 @@ struct ProgressBar: View {
                 .stroke(lineWidth: 20.0)
                 .opacity(0.20)
                 .foregroundColor(Color.black)
+            
             
             Text("Graphic View")
             
@@ -50,6 +55,6 @@ struct ProgressBar: View {
 struct CircleLoanView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CircleLoanView()
+        CircleLoanView(loanAmount: .constant(15000))
     }
 }

@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct SliderView: View {
+    
     @State var loanAmount: Float = 15000.0
     @State private var installment: Float = 12.0
     @State private var amountOfInstalment: Float = 0.0
+    
+    @State var isPresenting = false
     
     
     func Calculate() {
@@ -63,9 +66,20 @@ struct SliderView: View {
             
             Text(
                 String(format: "The amount of your loan installment " + "%.2f", amountOfInstalment )
-
+                
             )
             
+            Button("Graph") {
+                isPresenting = true
+            }
+            .frame(height: 50)
+            .frame(maxWidth: 100)
+            .buttonStyle(.borderedProminent)
+        }
+        .sheet(isPresented: $isPresenting) {
+            NavigationView {
+                CircleLoanView(loanAmount: $loanAmount)
+            }
         }
     }
 }
