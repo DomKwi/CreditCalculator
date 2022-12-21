@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var isPresenting = false
-        
+    @State private var xd: Float = 0.0
     var body: some View {
         NavigationView {
             VStack {

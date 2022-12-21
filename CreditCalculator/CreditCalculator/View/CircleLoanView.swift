@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct CircleLoanView: View {
-    var CircleLoanView = SliderView()
     @State var progressValue: Float = 0.0
     
 
-    
     var body: some View {
         VStack {
             ProgressBar(progress: self.$progressValue)
@@ -45,10 +43,12 @@ struct ProgressBar: View {
                 .rotationEffect(Angle(degrees: 270))
                 .animation(.easeInOut(duration: 2.0))
         }
+        .navigationTitle("Graphic View")
     }
 }
 
 struct CircleLoanView_Previews: PreviewProvider {
+    
     static var previews: some View {
         CircleLoanView()
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SliderView: View {
-    @State private var loanAmount: Float = 15000.0
+    @State var loanAmount: Float = 15000.0
     @State private var installment: Float = 12.0
     @State private var amountOfInstalment: Float = 0.0
     
@@ -60,6 +60,12 @@ struct SliderView: View {
             .frame(maxWidth: 100)
             .buttonStyle(.borderedProminent)
             Spacer()
+            
+            Text(
+                String(format: "The amount of your loan installment " + "%.2f", amountOfInstalment )
+
+            )
+            
         }
     }
 }
