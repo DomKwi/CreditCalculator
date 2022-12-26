@@ -11,7 +11,7 @@ struct SliderView: View {
     
     @State var loanAmount: Float = 15000.0
     @State private var installment: Float = 12.0
-    @State private var amountOfInstalment: Float = 0.0
+    @State var amountOfInstalment: Float = 0.0
     
     @State var isPresenting = false
     
@@ -78,7 +78,8 @@ struct SliderView: View {
         }
         .sheet(isPresented: $isPresenting) {
             NavigationView {
-                CircleLoanView(loanAmount: $loanAmount)
+                CircleLoanView(loanAmount: $loanAmount,
+                               amountOfInstalment: $amountOfInstalment)
             }
         }
     }
